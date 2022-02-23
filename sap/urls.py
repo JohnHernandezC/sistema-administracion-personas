@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from personasApp.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('webAppHome.urls')),
+    path('detalle_persona/<int:id>', detallePersona),
+    path('nueva_persona',nuevaPersona)
     #path('home/', include('serviciosApp.urls')),
 ]

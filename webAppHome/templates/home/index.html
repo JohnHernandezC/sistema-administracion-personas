@@ -8,6 +8,17 @@
 </head>
 <body>
     <h1>Hola este es el index</h1>
+    <body> {{msg}}</body>
     <p>sea bienvenido</p>
+    <p>{{msg2}}</p>
+    <div><p><a href="nueva_persona">Agregar persona</a></p></div>
+
+    <div>
+    {% for i in personas %} 
+    <p>El nombre es: {{i.nombre}} {{i.apellido}}</p>
+    <a href="detalle_persona/{{i.id}}">Ver Detalles</a>
+    {% endfor %}
+    </div>
+
 </body>
 </html>
