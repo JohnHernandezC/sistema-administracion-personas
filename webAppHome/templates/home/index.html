@@ -14,10 +14,47 @@
     <div><p><a href="nueva_persona">Agregar persona</a></p></div>
 
     <div>
-    {% for i in personas %} 
-    <p>El nombre es: {{i.nombre}} {{i.apellido}}</p>
-    <a href="detalle_persona/{{i.id}}">Ver Detalles</a>
-    {% endfor %}
+    
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            
+
+        </thead>
+        <tbody> 
+            {% for i in personas %} 
+            <tr>
+                <td>
+                    {{i.id}}
+                </td>
+                <td>
+                    {{i.nombre}}
+                </td>
+                <td>
+                    {{i.apellido}}
+                </td>
+                <td>
+                    <a href="detalle_persona/{{i.id}}">Ver Detalles</a>
+                </td>
+                <td>
+                    <a href="editar_persona/{{i.id}}">Editar</a>
+                </td>
+                <td>
+                    <a href="eliminar_persona/{{i.id}}">Eliminar</a>
+                </td>
+            </tr>
+
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+    
     </div>
 
 </body>

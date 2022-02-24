@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import include, path
 
 from personasApp.views import *
+from webAppHome.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('webAppHome.urls')),
+    path('',home,name='index'),
     path('detalle_persona/<int:id>', detallePersona),
+    path('editar_persona/<int:id>', editarPersona),
+    path('eliminar_persona/<int:id>', eliminarPersona),
     path('nueva_persona',nuevaPersona)
     #path('home/', include('serviciosApp.urls')),
 ]
